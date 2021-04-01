@@ -47,10 +47,7 @@ const modulus = (number) => {
 
 // 4. Multiply the array.
 const multiplyArray = (arrValue) => {
-    for(let i = 0; i < arrValue.length; i++){
-
-    }
-    return arrValue;
+    // please write your code here
 }
 
 const testMultiplyArrayLength = (testCase, expectedValue, value) => {
