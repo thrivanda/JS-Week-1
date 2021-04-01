@@ -64,14 +64,7 @@ const testMultiplyArrayLength = (testCase, expectedValue, value) => {
 
 // 5. Filter out the odd number
 const filterOutTheOddNumber = (numberList) => {
-    let result = Array();
-    numberList.forEach(element => {
-        if(element % 2 === 1) {
-            result.push(element);
-        }
-    });
-
-    return result;
+    // please write your solution code here
 }
 
 // test case 1
