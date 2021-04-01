@@ -48,11 +48,10 @@ const modulus = (number) => {
 // 4. Multiply the array.
 const multiplyArray = (arrValue) => {
     for(let i = 0; i < arrValue.length; i++){
-        arrValue[i] *= parseInt(arrValue[i]); 
+
     }
     return arrValue;
 }
-// multiplyArray([1,8,5,'20','7']);
 
 const testMultiplyArrayLength = (testCase, expectedValue, value) => {
     for(let i = 0; i < testCase.length; i++){
