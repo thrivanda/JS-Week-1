@@ -74,6 +74,7 @@ const filterOutTheOddNumber = (numberList) => {
     return result;
 }
 
+// test case 1
 const testFilterOutTheOddNumber = (testCase, expectedValue, value) => {
     for(let i = 0; i < testCase.length; i++){
         console.log(testCase[i] !== expectedValue[i] 
@@ -81,4 +82,12 @@ const testFilterOutTheOddNumber = (testCase, expectedValue, value) => {
         : `test case 1: Success! Passed the test case`);
     }
 };
+
+// test case 2
+const testFilterOutTheOddNumberLength = (testCase, expectedValue, value) => {
+        console.log(testCase.length !== expectedValue.length 
+        ? `test case 2: Failed! expected array value length ${expectedValue.length} but got ${testCase.length}`
+        : `test case 2: Success! Passed the test case`);
+};
 testFilterOutTheOddNumber(filterOutTheOddNumber([3,16,89,20,243,890,675]), [3,89,243,675], [3,16,89,20,243,890,675]);
+testFilterOutTheOddNumberLength(filterOutTheOddNumber([3,16,89,20,243,890,675]), [3,89,243,675], [3,16,89,20,243,890,675]);
