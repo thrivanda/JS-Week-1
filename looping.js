@@ -53,11 +53,32 @@ const multiplyArray = (arrValue) => {
 const testMultiplyArrayLength = (testCase, expectedValue, value) => {
     for(let i = 0; i < testCase.length; i++){
         if(testCase[i] !== expectedValue[i]){
-            console.log(`test case 1: Failed ! expected ${expectedValue} but got ${testCase}`);
+            console.log(`test case 1: Failed ! expected ${expectedValue[i]} but got ${testCase[i]}`);
         } else if(testCase[i] === expectedValue[i]) {
-            console.log(`test case 1: Success ! multiply ${value} is same with ${expectedValue}`);
+            console.log(`test case 1: Success ! multiply ${value[i]} is same with ${expectedValue[i]}`);
         }
     }
 }
+// testMultiplyArrayLength(multiplyArray([1,8,5,'20','7']), [ 1, 64, 25, 400, 49 ], [1,8,5,'20','7']);
 
-testMultiplyArrayLength(multiplyArray([1,8,5,'20','7']), [ 1, 64, 25, 400, 49 ], [1,8,5,'20','7']);
+
+// 5. Filter out the odd number
+const filterOutTheOddNumber = (numberList) => {
+    let result = Array();
+    numberList.forEach(element => {
+        if(element % 2 === 1) {
+            result.push(element);
+        }
+    });
+
+    return result;
+}
+
+const testFilterOutTheOddNumber = (testCase, expectedValue, value) => {
+    for(let i = 0; i < testCase.length; i++){
+        console.log(testCase[i] !== expectedValue[i] 
+        ? `test case 1: Failed! expected ${expectedValue[i]} but got ${testCase[i]}`
+        : `test case 1: Success! Passed the test case`);
+    }
+};
+testFilterOutTheOddNumber(filterOutTheOddNumber([3,16,89,20,243,890,675]), [3,89,243,675], [3,16,89,20,243,890,675]);
