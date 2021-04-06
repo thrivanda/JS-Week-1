@@ -14,7 +14,10 @@ function penambahan(angkaPertama, angkaKedua, angkaKetiga) {
 
 // 2. even or odd
 const evenOrOdd = (arrayListNumber) => {
-    let newValue = Array();
+    /**
+     * First solution using "for"
+     */
+    // let newValue = Array();
     // looping atau pengulangan
     // for(let i = 0; i < arrayListNumber.length; i++) {
     //     if(arrayListNumber[i] % 2 == 0){
@@ -24,16 +27,31 @@ const evenOrOdd = (arrayListNumber) => {
     //     }
     // }
 
-    arrayListNumber.forEach(element => {
-        if(element % 2 == 0){
-            newValue.push('genap');
-        } else if(element % 2 == 1){
-            newValue.push('ganjil');
-        }
-    });
-    return console.log(newValue);
+    /**
+     * Second solution using "forEach"
+     */
+    // arrayListNumber.forEach(element => {
+    //     if(element % 2 == 0){
+    //         newValue.push('genap');
+    //     } else if(element % 2 == 1){
+    //         newValue.push('ganjil');
+    //     }
+    // });
+    // return console.log(newValue);
+
+    /**
+     * Third solution using "map" method
+     */
+    return arrayListNumber.map( val => val % 2 === 0 ? 'genap' : 'ganjil' );
 }
-// evenOrOdd([2,4,91,53,3,18,72]);
+
+const testEvenOrOdd = (testCase, expectedValue, value) => testCase.filter((val, index) => !expectedValue.includes(val) 
+? console.log(`test Even or Odd: Failed! expected ${expectedValue[index]} but got ${val}`) 
+: console.log(`test Even or Odd: Success! passed the test case`));
+
+testEvenOrOdd(evenOrOdd([2,4,91,53,3,18,72]), [ 'genap', 'genap', 'ganjil', 'ganjil', 'ganjil', 'genap', 'genap' ]);
+testEvenOrOdd(evenOrOdd([1,3,5,7,9,11]), [ 'ganjil', 'ganjil', 'ganjil', 'ganjil', 'ganjil', 'ganjil']);
+
 
 // 3. Modulus
 const modulus = (number) => {
@@ -48,6 +66,7 @@ const modulus = (number) => {
 // 4. Multiply the array.
 const multiplyArray = (arrValue) => {
     // please write your code here
+    return arrValue.map( (value) => value * value);
 }
 
 const testMultiplyArrayLength = (testCase, expectedValue, value) => {
@@ -59,12 +78,13 @@ const testMultiplyArrayLength = (testCase, expectedValue, value) => {
         }
     }
 }
-// testMultiplyArrayLength(multiplyArray([1,8,5,'20','7']), [ 1, 64, 25, 400, 49 ], [1,8,5,'20','7']);
+testMultiplyArrayLength(multiplyArray([1,8,5,'20','7']), [ 1, 64, 25, 400, 49 ], [1,8,5,'20','7']);
 
 
-// 5. Filter out the odd number
+// filter, map, reduce, find dalam nya adalah looping, cuma ini method langsung dari js untuk mempermudah.
+// 5. Filter out the even number
 const filterOutTheOddNumber = (numberList) => {
-    // please write your solution code here
+    return numberList.filter( val => val % 2 === 1 );
 }
 
 // test case 1
@@ -82,5 +102,7 @@ const testFilterOutTheOddNumberLength = (testCase, expectedValue, value) => {
         ? `test case 2: Failed! expected array value length ${expectedValue.length} but got ${testCase.length}`
         : `test case 2: Success! Passed the test case`);
 };
-testFilterOutTheOddNumber(filterOutTheOddNumber([3,16,89,20,243,890,675]), [3,89,243,675], [3,16,89,20,243,890,675]);
-testFilterOutTheOddNumberLength(filterOutTheOddNumber([3,16,89,20,243,890,675]), [3,89,243,675], [3,16,89,20,243,890,675]);
+testFilterOutTheOddNumber(filterOutTheOddNumber([3,16,'89','20','243','890',675]), [3,89,243,675], [3,16,'89','20','243','890',675]);
+testFilterOutTheOddNumberLength(filterOutTheOddNumber([3,16,89,'20',243,'890',675]), [3,89,243,675], [3,16,89,'20',243,'890',675]);
+
+
