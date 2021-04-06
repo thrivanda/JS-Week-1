@@ -4,7 +4,6 @@
  */
 const highestGrade = (arrayStudentList) => {
     // please write your solution here
-    return arrayStudentList.filter(val => val.major == 'Cyber Security' && val.score >= 90)
 };
 
 const arrayStudentList = [
