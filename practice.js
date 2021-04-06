@@ -47,8 +47,8 @@ testShoppingCart(shoppingCart(['chocolate', 'noodles', 'chocolate']), { chocolat
  * Capitalize Words - make every first letter word to capital
  * @param {*} arrWords 
  */
-const capitalizeWords = (arrWords) => {
-    // Please write your solution here
+const capitalizeWords = (strVal) => {
+    // please write your solution here
 }
 
 // test case for Capitalize Words
@@ -58,3 +58,17 @@ const testCapitalizeWords = (testValue, expectedValue) => {
  
 testCapitalizeWords(capitalizeWords('hElLO wORLd!'), 'Hello World!');
 testCapitalizeWords(capitalizeWords('the qUick BroWn Fox'), 'The Quick Brown Fox');
+
+const convertIntToStr = (arrVal) => {
+    // please write your solution here
+}
+
+// test case for Convert Integer to String
+const testConvertIntToStr = (testValue, expectedValue) => {
+    for(let i = 0; i < testValue.length; i++) {
+        console.log(testValue[i].name === expectedValue[i].name  && testValue[i].major === expectedValue[i].major  ? 'Convert Integer to String: Success!' : 'Convert Integer to String: Failed!');
+    }  
+};
+ 
+testConvertIntToStr(convertIntToStr([1, 4, 9]), [ '1', '4', '9' ]);
+testConvertIntToStr(convertIntToStr([3, 1, 19, 65]), [ '3', '1', '19', '65' ]);
