@@ -13,20 +13,20 @@ function getFruit(name, price) {
 function ambilBuah(nama, unit) {
     switch(true) {
         // console.log(nama);
-        case (nama === "strawberry") :
+        case (nama === "strawberry" && unit !== undefined) :
             return `ini adalah ${nama} dan berwarna merah, harga sekilo adalah Rp 20.000, 
-            maka total harganya adalah ${unit * 20000}`;
+            maka total harganya adalah Rp ${unit * 20000}`;
             break;
-        case (nama === "nangka") :
+        case (nama === "nangka" && unit !== undefined) :
             return `ini adalah ${nama}, rasanya manis. dan harga sekilonya adalah Rp 15.000,
-            maka total harganya adalah ${unit * 15000}`;
+            maka total harganya adalah Rp ${unit * 15000}`;
             break;
         default: 
             return 'hello';
             break;
     }
 }
-// console.log(ambilBuah('nangka', 2));
+console.log(ambilBuah('nangka', 4));
 
 
 function calculator(num1, num2, operator){
@@ -52,4 +52,4 @@ function calculator(num1, num2, operator){
     }
 }
 
-console.log(calculator(1, 20, 'x'));
+// console.log(calculator(1, 20, 'x'));
